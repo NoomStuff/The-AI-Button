@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+    --text-color: #dedede;
+    --background-color: #0c080e;
+    --font-family: "Noto Sans JP", "Roboto", Helvetica, Arial, sans-serif;
+
+    --spacing-1: 0.5rem;
+    --spacing-2: 1rem;
+    --spacing-3: 2rem;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    font-size: 1rem;
+
+    @media screen and (max-width: 640px) {
+        font-size: 0.95rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.9rem;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background: var(--background-color);
+    overflow-x: hidden;
+}
+
+main,
+main>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: var(--spacing-3);
+    margin: var(--spacing-3) 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    max-width: 1200px;
+
+    @media screen and (max-width: 1280px) {
+        max-width: 1000px;
+    }
+
+    @media screen and (max-width: 1080px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 100% !important;
+        padding: var(--spacing-3) !important;
+        border-radius: 0px !important;
+    }
+}
+
+/* ===== Text ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.5em;
+    line-height: 1.25;
+    margin-top: 0.4em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 0.3em;
+}
+
+a {
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p {
+    color: var(--text-color);
+    font-size: 1em;
+    margin: 0.4em 0;
+    font-weight: 400;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-1);
+    gap: var(--spacing-1);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-shadow: 2px 2px 0px var(--background-color);
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 33%, transparent 65%);
+    border-radius: var(--spacing-1);
+    cursor: pointer;
+    background-size: 300% 100%;
+    transition: background-position 0.6s cubic-bezier(0.25, 1, 0.75, 1), border-color 0.6s cubic-bezier(0.25, 1, 0.75, 1), color 0.6s cubic-bezier(0.25, 1, 0.75, 1);
+    border: 1px solid var(--primary-color);
+    background-position: right;
+
+    &:hover {
+        text-decoration: none;
+        background-position: left;
+        border: 1px solid transparent;
+        color: var(--text-color);
+    }
+}
+
+.buttons-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    gap: var(--spacing-3);
+    width: 100%;
+    height: 360px;
+    border-radius: var(--spacing-3);
+    background-color: #fefefe;
+}
