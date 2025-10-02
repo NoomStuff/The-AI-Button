@@ -1,0 +1,103 @@
+.ai-button-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 1em;
+    background: transparent;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.ai-button-2 .aura {
+    position: absolute;
+    inset: 0px;
+    border-radius: 1em;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    transition: transform 1s cubic-bezier(0.2, 4, 0.5, 0.25);
+    transform: scale(1);
+}
+
+.ai-button-2:hover .aura {
+    transform: scale(1.05);
+}
+
+.ai-button-2 .aura::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(#ff6ec4, #7873f5, #4ade80, #22d3ee, #3b82f6, #8b5cf6, #ec4899, #ff6ec4);
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    animation: rotate 5s linear infinite;
+}
+
+
+.ai-button-2::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 0.8em;
+    background: black;
+    z-index: 0;
+}
+
+
+.ai-button-2 .label {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    bottom: -3.5em;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #dedede;
+    background-color: black;
+    padding: 0.4em 0.8em;
+    border-radius: 0.4em;
+    z-index: 3;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.ai-button-2:hover .label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ai-button-2 svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    position: relative;
+    fill: currentColor;
+    color: #dedede;
+    transition: transform 0.5s cubic-bezier(0.2, 4, 0.5, 0.25);
+}
+
+.ai-button-2:hover svg {
+    transform: scale(1);
+}
+
+.ai-button-2:hover svg {
+    transform: scale(1.05);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

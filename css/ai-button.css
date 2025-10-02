@@ -1,15 +1,4 @@
-/* Google Gemini inspired "AI Button" 
-by NoomStuff */
-
 .ai-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    background: transparent;
-    border: none;.ai-button {
     position: relative;
     display: flex;
     align-items: center;
@@ -20,10 +9,24 @@ by NoomStuff */
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    overflow: hidden;
+    z-index: 0;
 }
 
-.ai-button::before {
+.ai-button .aura {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.3, 0.75, 0.2, 1);
+}
+
+.ai-button:hover .aura {
+    transform: scale(1);
+}
+
+.ai-button .aura::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -33,7 +36,9 @@ by NoomStuff */
     clip-path: var(--circle);
     z-index: 0;
     filter: blur(12px);
-    animation: morph 8s ease-in-out infinite, wave 4s linear infinite;
+    transform-origin: center center;
+    will-change: clip-path, background-position, transform;
+    animation: morph 8s ease-in-out infinite, wave 4s linear infinite, rotate 20s linear infinite;
 }
 
 .ai-button::after {
@@ -42,7 +47,7 @@ by NoomStuff */
     inset: 0;
     border-radius: 50%;
     filter: blur(4px);
-    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%);
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
     background-size: 200% 100%;
     z-index: 2;
     pointer-events: none;
@@ -91,132 +96,13 @@ by NoomStuff */
     color: #2d103d;
 }
 
-@keyframes morph {
-    0%, 20% { clip-path: var(--circle); }
-    25%, 45% { clip-path: var(--flower); }
-    50%, 70% { clip-path: var(--cylinder); }
-    75%, 95% { clip-path: var(--hexagon); }
-    100% { clip-path: var(--circle); }
-}
-
-@keyframes wave {
-    0% { background-position: 50% 0%; }
-    50% { background-position: 50% 100%; }
-    100% { background-position: 50% 0%; }
-}
-
-@keyframes shine {
-    from { background-position: 150% 0%; }
-    to { background-position: -250% 0%; }
-}
-
-    cursor: pointer;
-}
-
-.ai-button .aura-wrapper {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    overflow: hidden;
-    clip-path: var(--shape1);
-    animation: rotate 12s linear infinite, morph 8s ease-in-out infinite;
-}
-
-.ai-button .aura {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    overflow: hidden;
-    transform: scale(0);
-    transform-origin: center center;
-    z-index: 0;
-    pointer-events: none;
-    will-change: transform, opacity;
-    filter: blur(0px);
-    transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.25, 1), filter 0.8s ease;
-}
-
-.ai-button:hover .aura,
-.ai-button:focus .aura {
-    transform: scale(1);
-    filter: blur(12px);
-}
-
-.ai-button .aura::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -50%;
-    width: 100%;
-    height: 200%;
-    background: linear-gradient(180deg, #9ed2ff 0%, #b69cff 30%, #ff739a 60%, #ffb347 90%);
-    background-size: 100% 200%;
-    animation: wave 4s linear infinite;
-    transform-origin: 50% 50%;
-}
-
-.ai-button::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    filter: blur(4px);
-    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
-    background-size: 200% 100%;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0;
-}
-
-.ai-button:hover::after {
-    animation: shine 1.2s ease forwards;
-    opacity: 1;
-}
-
-.ai-button .label {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    bottom: -3em;
-    font-size: 0.9em;
-    font-weight: 500;
-    white-space: nowrap;
-    color: #222;
-    background-color: rgba(223, 233, 255, 0.75);
-    padding: 0.4em 0.8em;
-    border-radius: 0.4em;
-    opacity: 0;
-    transform: translateY(4px) scale(0.95);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.ai-button:hover .label {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-.ai-button svg {
-    width: 70%;
-    height: 70%;
-    transition: transform 1s cubic-bezier(0.2, 0.6, 0.25, 1), color 0.25s;
-    z-index: 1;
-    position: relative;
-    fill: currentColor;
-    color: #222;
-}
-
-.ai-button:hover svg {
-    transform: rotate(180deg) scale(1.06);
-    color: #2d103d;
-}
-
 @keyframes rotate {
     from {
-        transform: rotate(0deg);
+        transform: rotate(0turn);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: rotate(1turn);
     }
 }
 
@@ -234,6 +120,33 @@ by NoomStuff */
     }
 }
 
+@keyframes morph {
+
+    0%,
+    20% {
+        clip-path: var(--circle);
+    }
+
+    25%,
+    45% {
+        clip-path: var(--flower);
+    }
+
+    50%,
+    70% {
+        clip-path: var(--cylinder);
+    }
+
+    75%,
+    95% {
+        clip-path: var(--hexagon);
+    }
+
+    100% {
+        clip-path: var(--circle);
+    }
+}
+
 @keyframes shine {
     from {
         background-position: 150% 0%;
@@ -244,44 +157,7 @@ by NoomStuff */
     }
 }
 
-@keyframes morph {
 
-    0%,
-    20% {
-        clip-path: var(--circle);
-    }
-
-    24% {
-        clip-path: var(--flower);
-    }
-
-    24%,
-    46% {
-        clip-path: var(--flower);
-    }
-
-    50% {
-        clip-path: var(--cylinder);
-    }
-
-    50%,
-    70% {
-        clip-path: var(--cylinder);
-    }
-
-    74% {
-        clip-path: var(--hexagon);
-    }
-
-    74%,
-    96% {
-        clip-path: var(--hexagon);
-    }
-
-    100% {
-        clip-path: var(--circle);
-    }
-}
 
 /* Shoutout to my goat John Rhea who made these shapes, I was too lazy 
 https://css-tricks.com/recreating-gmails-google-gemini-animation */
