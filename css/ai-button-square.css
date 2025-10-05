@@ -1,4 +1,4 @@
-.ai-button-2 {
+.ai-button-square {
     position: relative;
     display: flex;
     align-items: center;
@@ -11,22 +11,22 @@
     z-index: 0;
 }
 
-.ai-button-2 .aura {
+.ai-button-square .aura {
     position: absolute;
     inset: 0px;
     border-radius: 1em;
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    transition: transform 1s cubic-bezier(0.2, 4, 0.5, 0.25);
+    transition: transform 1.2s cubic-bezier(0.2, 4, 0.5, 0.25);
     transform: scale(1);
 }
 
-.ai-button-2:hover .aura {
+.ai-button-square:hover .aura {
     transform: scale(1.05);
 }
 
-.ai-button-2 .aura::before {
+.ai-button-square .aura::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -41,21 +41,44 @@
 }
 
 
-.ai-button-2::after {
+.ai-button-square::after {
     content: "";
     position: absolute;
-    inset: 2px;
+    inset: 3%;
     border-radius: 0.8em;
-    background: black;
     z-index: 0;
+    background: black;
+    transition: background 1s cubic-bezier(0.2, 2, 0.5, 0.25), filter 1s cubic-bezier(0.2, 3, 0.5, 0.25);
 }
 
+.ai-button-square:hover::after {
+    background: rgba(0, 0, 0, 0.85);
+    filter: blur(1px);
+}
 
-.ai-button-2 .label {
+.ai-button-square svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    position: relative;
+    fill: currentColor;
+    color: #dedede;
+    transition: transform 0.6s cubic-bezier(0.2, 4, 0.5, 0.25);
+}
+
+.ai-button-square:hover svg {
+    transform: scale(1);
+}
+
+.ai-button-square:hover svg {
+    transform: scale(1.075);
+}
+
+.ai-button-square .label {
     position: absolute;
     z-index: 1;
     pointer-events: none;
-    bottom: -3.5em;
+    bottom: -3.2em;
     font-size: 0.9em;
     font-weight: 600;
     white-space: nowrap;
@@ -69,27 +92,9 @@
     transform: translateY(-8px);
 }
 
-.ai-button-2:hover .label {
+.ai-button-square:hover .label {
     opacity: 1;
     transform: translateY(0);
-}
-
-.ai-button-2 svg {
-    width: 70%;
-    height: 70%;
-    z-index: 1;
-    position: relative;
-    fill: currentColor;
-    color: #dedede;
-    transition: transform 0.5s cubic-bezier(0.2, 4, 0.5, 0.25);
-}
-
-.ai-button-2:hover svg {
-    transform: scale(1);
-}
-
-.ai-button-2:hover svg {
-    transform: scale(1.05);
 }
 
 @keyframes rotate {

@@ -1,4 +1,4 @@
-.normal-button-2 {
+.normal-button-square {
     position: relative;
     display: flex;
     align-items: center;
@@ -11,11 +11,11 @@
     cursor: pointer;
 }
 
-.normal-button-2:hover {
-    background-color: rgb(240, 240, 240);
+.normal-button-square:hover {
+    background-color: rgb(242, 242, 242);
 }
 
-.normal-button-2 .label {
+.normal-button-square .label {
     position: absolute;
     z-index: 1;
     pointer-events: none;
@@ -30,11 +30,11 @@
     opacity: 0;
 }
 
-.normal-button-2:hover .label {
+.normal-button-square:hover .label {
     opacity: 1;
 }
 
-.normal-button-2 svg {
+.normal-button-square svg {
     width: 70%;
     height: 70%;
     z-index: 1;

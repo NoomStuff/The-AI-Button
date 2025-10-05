@@ -1,4 +1,4 @@
-.ai-button {
+.ai-button-circle {
     position: relative;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
     z-index: 0;
 }
 
-.ai-button .aura {
+.ai-button-circle .aura {
     position: absolute;
     inset: 0;
     border-radius: 50%;
@@ -22,11 +22,11 @@
     transition: transform 0.5s cubic-bezier(0.3, 0.75, 0.2, 1);
 }
 
-.ai-button:hover .aura {
+.ai-button-circle:hover .aura {
     transform: scale(1);
 }
 
-.ai-button .aura::before {
+.ai-button-circle .aura::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -38,10 +38,10 @@
     filter: blur(12px);
     transform-origin: center center;
     will-change: clip-path, background-position, transform;
-    animation: morph 8s ease-in-out infinite, wave 4s linear infinite, rotate 20s linear infinite;
+    animation: morph 6s ease-in-out infinite, wave 4s linear infinite, rotate 10s linear infinite;
 }
 
-.ai-button::after {
+.ai-button-circle::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -55,13 +55,30 @@
     transition: opacity 0.3s ease;
 }
 
-.ai-button:hover::after {
+.ai-button-circle:hover::after {
     animation: shine 1.2s ease forwards;
     opacity: 1;
 }
 
-.ai-button .label {
+.ai-button-circle svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    fill: currentColor;
+    color: #222;
+    transition: transform 1s cubic-bezier(0.2, 0.6, 0.25, 1), color 0.25s;
+    position: relative;
+}
+
+.ai-button-circle:hover svg {
+    transform: rotate(180deg) scale(1.06);
+    color: #2d103d;
+}
+
+.ai-button-circle .label {
     position: absolute;
+    z-index: 3;
+    pointer-events: none;
     bottom: -3em;
     font-size: 0.9em;
     font-weight: 500;
@@ -73,27 +90,11 @@
     opacity: 0;
     transform: translateY(4px) scale(0.95);
     transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 3;
 }
 
-.ai-button:hover .label {
+.ai-button-circle:hover .label {
     opacity: 1;
     transform: translateY(0) scale(1);
-}
-
-.ai-button svg {
-    width: 70%;
-    height: 70%;
-    z-index: 1;
-    fill: currentColor;
-    color: #222;
-    transition: transform 1s cubic-bezier(0.2, 0.6, 0.25, 1), color 0.25s;
-    position: relative;
-}
-
-.ai-button:hover svg {
-    transform: rotate(180deg) scale(1.06);
-    color: #2d103d;
 }
 
 @keyframes rotate {
@@ -123,22 +124,22 @@
 @keyframes morph {
 
     0%,
-    20% {
+    36% {
         clip-path: var(--circle);
     }
 
-    25%,
-    45% {
+    40%,
+    56% {
         clip-path: var(--flower);
     }
 
-    50%,
-    70% {
+    60%,
+    76% {
         clip-path: var(--cylinder);
     }
 
-    75%,
-    95% {
+    80%,
+    96% {
         clip-path: var(--hexagon);
     }
 

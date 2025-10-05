@@ -1,4 +1,4 @@
-.normal-button {
+.normal-button-icon {
     position: relative;
     display: flex;
     align-items: center;
@@ -11,34 +11,34 @@
     cursor: pointer;
 }
 
-.normal-button:hover {
-    background-color: rgba(223, 233, 255, 0.75);
-}
-
-.normal-button .label {
+.normal-button-icon .label {
     position: absolute;
-    z-index: 1;
+    z-index: 4;
     pointer-events: none;
-    bottom: -3em;
+    bottom: -2.2em;
     font-size: 0.9em;
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
-    color: #222;
-    background-color: rgba(223, 233, 255, 0.75);
-    padding: 0.4em 0.8em;
-    border-radius: 0.4em;
+    color: #111;
+    padding: 0.45em 0.9em;
+    border-radius: 0.45em;
     opacity: 0;
+    background: rgba(255, 255, 255, 0.95);
 }
 
-.normal-button:hover .label {
+.normal-button-icon:hover .label {
     opacity: 1;
 }
 
-.normal-button svg {
+.normal-button-icon svg {
     width: 70%;
     height: 70%;
     z-index: 1;
     position: relative;
     fill: currentColor;
-    color: #222;
+    color: rgb(0, 93, 136);
+}
+
+.normal-button-icon:hover svg {
+    color: rgb(0, 140, 175);
 }

@@ -1,0 +1,44 @@
+.normal-button-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.normal-button-circle:hover {
+    background-color: rgba(223, 233, 255, 0.75);
+}
+
+.normal-button-circle .label {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    bottom: -3em;
+    font-size: 0.9em;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #222;
+    background-color: rgba(223, 233, 255, 0.75);
+    padding: 0.4em 0.8em;
+    border-radius: 0.4em;
+    opacity: 0;
+}
+
+.normal-button-circle:hover .label {
+    opacity: 1;
+}
+
+.normal-button-circle svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    position: relative;
+    fill: currentColor;
+    color: #222;
+}
