@@ -1,0 +1,126 @@
+.ai-button-pill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 64px;
+    border-radius: 32px;
+    border: 0px solid transparent;
+    cursor: pointer;
+    z-index: 0;
+    transition: background 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.ai-button-pill .aura {
+    position: absolute;
+    inset: 0px;
+    border-radius: 32px;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    transition: filter 1s cubic-bezier(0.4, 2, 0.5, 0.25);
+}
+
+.ai-button-pill:hover .aura {
+    filter: blur(12px);
+}
+
+.ai-button-pill .aura::before {
+    content: "";
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 250%;
+    height: 250%;
+    background: conic-gradient(#ff6ec4, #7873f5, #4ade80, #22d3ee, #3b82f6, #8b5cf6, #ec4899, #ff6ec4);
+    opacity: 0.5;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    animation: rotate 5s linear infinite;
+}
+
+.ai-button-pill::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 32px;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(227, 233, 247, 0.8) 0%, rgba(247, 250, 253, 1) 100%);
+    transition: background 1s cubic-bezier(0.2, 2, 0.5, 0.25), filter 1s cubic-bezier(0.2, 3, 0.5, 0.25);
+}
+
+.ai-button-pill:hover::after {
+    background: linear-gradient(90deg, rgba(227, 233, 247, 0.6) 0%, rgba(247, 250, 253, 0.9) 100%);
+}
+
+.ai-button-pill svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    position: relative;
+    fill: currentColor;
+    color: #3a5fa8;
+}
+
+.ai-button-pill:hover svg {
+    color: #1a3f78;
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    animation: flip 1s forwards ease;
+    transition: transform 1s ease, color 0.5s ease;
+}
+
+.ai-button-pill:hover {
+    background: linear-gradient(90deg, #d0e2ff 0%, #e3e9f7 100%);
+    box-shadow: 0 2px 12px 0 rgba(80, 120, 200, 0.10);
+    border-color: #7fa7e3;
+}
+
+.ai-button-pill .label {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    top: -2.5em;
+    font-size: 0.9em;
+    white-space: nowrap;
+    color: #1a3f78;
+    padding: 0.4em 0.8em;
+    border-radius: 0.4em;
+    transition: opacity 0.2s ease, font-weight 0.4s ease;
+    opacity: 0;
+    font-weight: 100;
+}
+
+.ai-button-pill:hover .label {
+    opacity: 1;
+    font-weight: 700;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: scale(1) rotateX(-180deg) rotateY(-180deg) rotateZ(-90deg);
+    }
+
+    70% {
+        transform: scale(1.5) rotateX(10deg) rotateY(10deg) rotateZ(5deg);
+    }
+
+    95% {
+        transform: scale(1.15) rotateX(-1deg) rotateY(-1deg) rotateZ(-1deg);
+    }
+
+    100% {
+        transform: scale(1.2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
