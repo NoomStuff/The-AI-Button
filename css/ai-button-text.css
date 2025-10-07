@@ -1,0 +1,92 @@
+.ai-button-text {
+    position: relative;
+    display: inline-flex;
+    z-index: 1;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+    background: transparent;
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    transition: padding 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), gap 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    padding: 0.7em 1.4em;
+    gap: 0.6em;
+    color: #8900d2;
+}
+
+.ai-button-text:hover {
+    padding: 0.7em 1.6em;
+    gap: 1em;
+    color: #ffffff;
+    background: linear-gradient(90deg, #f3fff3 60%, #e3e9f7 100%);
+    text-shadow: 0 0 8px #a600ff88, 0 0 16px #00ffe7cc;
+    text-decoration: none;
+    box-shadow: 0 0 24px 8px #a600ff44, 0 0 32px 12px #00ffe722;
+}
+
+.ai-button-text::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #000000;
+    width: 200%;
+    height: 200%;
+    translate: 0% -100%;
+    transform: rotateZ(-15deg);
+    transition: 1s translate cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ai-button-text:hover::before {
+    translate: 0% 0%;
+}
+
+.ai-button-text svg {
+    width: 2em;
+    height: 2em;
+    fill: currentColor;
+    color: inherit;
+    transition: color 0.3s, filter 0.3s, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: drop-shadow(0 2px 8px #a600ff22);
+}
+
+.ai-button-text:hover svg {
+    color: inherit;
+    filter: drop-shadow(0 0 8px #a600ff88) drop-shadow(0 0 16px #00ffe7cc);
+    transform: scale(1.18) rotate(-8deg) skewX(-2deg);
+    animation: svg-wobble 0.8s cubic-bezier(.2, .8, .2, 1);
+}
+
+@keyframes svg-wobble {
+    0% {
+        transform: scale(1) rotate(0deg) skewX(0deg);
+    }
+
+    30% {
+        transform: scale(1.22) rotate(-12deg) skewX(-4deg);
+    }
+
+    60% {
+        transform: scale(1.12) rotate(8deg) skewX(2deg);
+    }
+
+    100% {
+        transform: scale(1.18) rotate(-8deg) skewX(-2deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ai-button-text,
+    .ai-button-text::before,
+    .ai-button-text::after,
+    .ai-button-text svg {
+        transition: none !important;
+        animation: none !important;
+    }
+}

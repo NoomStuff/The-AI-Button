@@ -8,6 +8,9 @@
     border-radius: 1em;
     background: transparent;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     z-index: 0;
 }
 

@@ -9,6 +9,9 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .normal-button-icon .label {
@@ -36,9 +39,9 @@
     z-index: 1;
     position: relative;
     fill: currentColor;
-    color: rgb(0, 93, 136);
+    color: #34579c;
 }
 
 .normal-button-icon:hover svg {
-    color: rgb(0, 140, 175);
+    color: #567fd2;
 }

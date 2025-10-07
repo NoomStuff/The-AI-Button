@@ -9,6 +9,9 @@
     background: linear-gradient(90deg, #e3e9f7 0%, #f7fafd 100%);
     border: 2px solid #b6c6e3;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .normal-button-pill:hover {

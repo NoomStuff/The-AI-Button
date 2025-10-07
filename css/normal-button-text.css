@@ -1,0 +1,34 @@
+.normal-button-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    padding: 0.7em 1.4em;
+    border-radius: 2em;
+    background: transparent;
+    color: #006351;
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.normal-button-text:hover {
+    background: #efffef;
+    color: #002b32;
+    text-decoration: none;
+}
+
+.normal-button-text svg {
+    width: 2em;
+    height: 2em;
+    fill: currentColor;
+    color: #003741;
+}
+
+.normal-button-text:hover svg {
+    color: #002b32;
+}
