@@ -58,35 +58,24 @@
 .ai-button-text:hover svg {
     color: inherit;
     filter: drop-shadow(0 0 8px #a600ff88) drop-shadow(0 0 16px #00ffe7cc);
-    transform: scale(1.18) rotate(-8deg) skewX(-2deg);
-    animation: svg-wobble 0.8s cubic-bezier(.2, .8, .2, 1);
+    transform: scale(1.2) rotate(-8deg) skewX(-2deg);
+    animation: wobble 0.8s cubic-bezier(0.4, 0.8, 0.2, 1);
 }
 
-@keyframes svg-wobble {
+@keyframes wobble {
     0% {
-        transform: scale(1) rotate(0deg) skewX(0deg);
+        transform: scale(1) rotate(0deg);
     }
 
     30% {
-        transform: scale(1.22) rotate(-12deg) skewX(-4deg);
+        transform: scale(1.25) rotate(-12deg);
     }
 
     60% {
-        transform: scale(1.12) rotate(8deg) skewX(2deg);
+        transform: scale(1.15) rotate(8deg);
     }
 
     100% {
-        transform: scale(1.18) rotate(-8deg) skewX(-2deg);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ai-button-text,
-    .ai-button-text::before,
-    .ai-button-text::after,
-    .ai-button-text svg {
-        transition: none !important;
-        animation: none !important;
+        transform: scale(1.2) rotate(-8deg);
     }
 }
