@@ -14,14 +14,16 @@
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    transition: padding 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), gap 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: padding 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), margin 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), gap 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     padding: 0.7em 1.4em;
+    margin: 0em 0.4em;
     gap: 0.6em;
     color: #8900d2;
 }
 
 .ai-button-text:hover {
     padding: 0.7em 1.6em;
+    margin: 0em 0em;
     gap: 1em;
     color: #ffffff;
     background: linear-gradient(90deg, #f3fff3 60%, #e3e9f7 100%);
@@ -58,24 +60,23 @@
 .ai-button-text:hover svg {
     color: inherit;
     filter: drop-shadow(0 0 8px #a600ff88) drop-shadow(0 0 16px #00ffe7cc);
-    transform: scale(1.2) rotate(-8deg) skewX(-2deg);
-    animation: wobble 0.8s cubic-bezier(0.4, 0.8, 0.2, 1);
+    animation: wobble 0.7s cubic-bezier(0.4, 0.8, 0.2, 1);
 }
 
 @keyframes wobble {
     0% {
-        transform: scale(1) rotate(0deg);
-    }
-
-    30% {
-        transform: scale(1.25) rotate(-12deg);
+        transform: scale(1) rotateY(180deg) rotateZ(0deg);
     }
 
     60% {
-        transform: scale(1.15) rotate(8deg);
+        transform: scale(1.2) rotateZ(0deg);
+    }
+
+    95% {
+        transform: scale(0.95) rotateZ(95deg);
     }
 
     100% {
-        transform: scale(1.2) rotate(-8deg);
+        transform: scale(1) rotateY(0deg) rotateZ(90deg);
     }
 }

@@ -1,4 +1,4 @@
-.normal-button-icon {
+.normal-button-wild {
     position: relative;
     display: flex;
     align-items: center;
@@ -14,34 +14,36 @@
     -ms-user-select: none;
 }
 
-.normal-button-icon .label {
+.normal-button-wild .label {
     position: absolute;
     z-index: 4;
     pointer-events: none;
-    bottom: -2.2em;
+    transform-origin: right center;
+    translate: calc(-50% - 4em) 0;
     font-size: 0.9em;
     font-weight: 600;
     white-space: nowrap;
     color: #111;
-    padding: 0.45em 0.9em;
-    border-radius: 0.45em;
+    padding: 0.5em 1.2em;
+    border-radius: 5em;
     opacity: 0;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
     background: rgba(255, 255, 255, 0.95);
 }
 
-.normal-button-icon:hover .label {
+.normal-button-wild:hover .label {
     opacity: 1;
 }
 
-.normal-button-icon svg {
+.normal-button-wild svg {
     width: 70%;
     height: 70%;
     z-index: 1;
     position: relative;
     fill: currentColor;
-    color: #625950;
+    color: #950937;
 }
 
-.normal-button-icon:hover svg {
-    transform: scale(1.075);
+.normal-button-wild:hover svg {
+    color: #eb3a34;
 }
