@@ -18,11 +18,20 @@
     background-color: rgba(223, 233, 255, 0.75);
 }
 
+.normal-button-circle svg {
+    z-index: 1;
+    width: 70%;
+    height: 70%;
+    position: relative;
+    fill: currentColor;
+    color: #222;
+}
+
 .normal-button-circle .label {
     position: absolute;
     z-index: 1;
-    pointer-events: none;
     bottom: -3em;
+    pointer-events: none;
     font-size: 0.9em;
     font-weight: 500;
     white-space: nowrap;
@@ -35,13 +44,4 @@
 
 .normal-button-circle:hover .label {
     opacity: 1;
-}
-
-.normal-button-circle svg {
-    width: 70%;
-    height: 70%;
-    z-index: 1;
-    position: relative;
-    fill: currentColor;
-    color: #222;
 }

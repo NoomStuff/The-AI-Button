@@ -12,16 +12,16 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 0;
     width: 100px;
     height: 100px;
-    background: transparent;
-    border: none;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
     border-radius: 50%;
-    z-index: 0;
+    background: transparent;
+    border: none;
 }
 
 .ai-button-circle::after {
@@ -29,13 +29,13 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    filter: blur(4px);
     background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
     background-size: 200% 100%;
+    filter: blur(4px);
     z-index: 2;
     pointer-events: none;
-    opacity: 0;
     transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
 .ai-button-circle:hover::after {
@@ -46,8 +46,8 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
 .ai-button-circle .aura {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
     z-index: -1;
+    border-radius: 50%;
     pointer-events: none;
     transform: scale(0);
     transition: transform 0.5s cubic-bezier(0.3, 0.75, 0.2, 1);
@@ -61,11 +61,11 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 0;
     border-radius: 50%;
     background: linear-gradient(180deg, #9ed2ff 0%, #b69cff 30%, #ff739a 60%, #ffb347 90%);
     background-size: 100% 200%;
     clip-path: var(--circle);
-    z-index: 0;
     filter: blur(12px);
     transform-origin: center center;
     will-change: clip-path, background-position, transform;
@@ -73,13 +73,13 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
 }
 
 .ai-button-circle svg {
+    z-index: 1;
     width: 70%;
     height: 70%;
-    z-index: 1;
+    position: relative;
     fill: currentColor;
     color: #222;
     transition: transform 1s cubic-bezier(0.2, 0.6, 0.25, 1), color 0.25s;
-    position: relative;
 }
 
 .ai-button-circle:hover svg {
@@ -90,7 +90,6 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
 .ai-button-circle .label {
     position: absolute;
     z-index: 3;
-    pointer-events: none;
     bottom: -3em;
     font-size: 0.9em;
     font-weight: 500;
@@ -99,9 +98,10 @@ https://css-tricks.com/recreating-gmails-google-gemini-animation */
     background-color: rgba(223, 233, 255, 0.75);
     padding: 0.4em 0.8em;
     border-radius: 0.4em;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
     opacity: 0;
     transform: translateY(4px) scale(0.95);
-    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .ai-button-circle:hover .label {

@@ -21,17 +21,6 @@
     color: #8900d2;
 }
 
-.ai-button-text:hover {
-    padding: 0.7em 1.6em;
-    margin: 0em 0em;
-    gap: 1em;
-    color: #ffffff;
-    background: linear-gradient(90deg, #f3fff3 60%, #e3e9f7 100%);
-    text-shadow: 0 0 8px #a600ff88, 0 0 16px #00ffe7cc;
-    text-decoration: none;
-    box-shadow: 0 0 24px 8px #a600ff44, 0 0 32px 12px #00ffe722;
-}
-
 .ai-button-text::before {
     content: "";
     position: absolute;
@@ -42,6 +31,17 @@
     translate: 0% -100%;
     transform: rotateZ(-15deg);
     transition: 1s translate cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ai-button-text:hover {
+    padding: 0.7em 1.6em;
+    margin: 0em 0em;
+    gap: 1em;
+    color: #ffffff;
+    background: linear-gradient(90deg, #f3fff3 60%, #e3e9f7 100%);
+    text-shadow: 0 0 8px #a600ff88, 0 0 16px #00ffe7cc;
+    text-decoration: none;
+    box-shadow: 0 0 24px 8px #a600ff44, 0 0 32px 12px #00ffe722;
 }
 
 .ai-button-text:hover::before {

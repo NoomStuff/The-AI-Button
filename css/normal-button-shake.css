@@ -14,6 +14,19 @@
     -ms-user-select: none;
 }
 
+.normal-button-shake svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    position: relative;
+    fill: currentColor;
+    color: #950937;
+}
+
+.normal-button-shake:hover svg {
+    color: #eb3a34;
+}
+
 .normal-button-shake .label {
     position: absolute;
     z-index: 4;
@@ -33,17 +46,4 @@
 
 .normal-button-shake:hover .label {
     opacity: 1;
-}
-
-.normal-button-shake svg {
-    width: 70%;
-    height: 70%;
-    z-index: 1;
-    position: relative;
-    fill: currentColor;
-    color: #950937;
-}
-
-.normal-button-shake:hover svg {
-    color: #eb3a34;
 }

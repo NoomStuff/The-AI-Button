@@ -14,11 +14,24 @@
     -ms-user-select: none;
 }
 
+.normal-button-icon svg {
+    z-index: 1;
+    width: 70%;
+    height: 70%;
+    position: relative;
+    fill: currentColor;
+    color: #625950;
+}
+
+.normal-button-icon:hover svg {
+    transform: scale(1.075);
+}
+
 .normal-button-icon .label {
     position: absolute;
     z-index: 4;
-    pointer-events: none;
     bottom: -2.2em;
+    pointer-events: none;
     font-size: 0.9em;
     font-weight: 600;
     white-space: nowrap;
@@ -31,17 +44,4 @@
 
 .normal-button-icon:hover .label {
     opacity: 1;
-}
-
-.normal-button-icon svg {
-    width: 70%;
-    height: 70%;
-    z-index: 1;
-    position: relative;
-    fill: currentColor;
-    color: #625950;
-}
-
-.normal-button-icon:hover svg {
-    transform: scale(1.075);
 }

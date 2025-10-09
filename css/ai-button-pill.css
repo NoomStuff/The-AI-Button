@@ -3,24 +3,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 0;
     width: 128px;
     height: 64px;
-    border-radius: 32px;
-    border: 0px solid transparent;
+    border-radius: 100vw;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    z-index: 0;
+    background: transparent;
+    border: 0px solid transparent;
     transition: background 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.ai-button-pill:hover {
+    background: linear-gradient(90deg, #d0e2ff 0%, #e3e9f7 100%);
+    box-shadow: 0 2px 12px 0 rgba(80, 120, 200, 0.10);
+    border-color: #7fa7e3;
 }
 
 .ai-button-pill::after {
     content: "";
     position: absolute;
     inset: 2px;
-    border-radius: 32px;
     z-index: 0;
+    border-radius: 32px;
     background: linear-gradient(90deg, rgba(227, 233, 247, 0.8) 0%, rgba(247, 250, 253, 1) 100%);
     transition: background 1s cubic-bezier(0.2, 2, 0.5, 0.25), filter 1s cubic-bezier(0.2, 3, 0.5, 0.25);
 }
@@ -32,8 +39,8 @@
 .ai-button-pill .aura {
     position: absolute;
     inset: 0px;
-    border-radius: 32px;
     z-index: -1;
+    border-radius: 32px;
     overflow: hidden;
     pointer-events: none;
     transition: filter 1s cubic-bezier(0.4, 2, 0.5, 0.25);
@@ -46,22 +53,22 @@
 .ai-button-pill .aura::before {
     content: "";
     position: absolute;
+    z-index: -1;
     top: -75%;
     left: -75%;
     width: 250%;
     height: 250%;
     background: conic-gradient(#ff6ec4, #7873f5, #4ade80, #22d3ee, #3b82f6, #8b5cf6, #ec4899, #ff6ec4);
     opacity: 0.5;
-    z-index: -1;
     transform: translate(-50%, -50%);
     transform-origin: center center;
     animation: rotate 5s linear infinite;
 }
 
 .ai-button-pill svg {
+    z-index: 1;
     width: 70%;
     height: 70%;
-    z-index: 1;
     position: relative;
     fill: currentColor;
     color: #3a5fa8;
@@ -74,17 +81,11 @@
     transition: transform 1s ease, color 0.5s ease;
 }
 
-.ai-button-pill:hover {
-    background: linear-gradient(90deg, #d0e2ff 0%, #e3e9f7 100%);
-    box-shadow: 0 2px 12px 0 rgba(80, 120, 200, 0.10);
-    border-color: #7fa7e3;
-}
-
 .ai-button-pill .label {
     position: absolute;
     z-index: 1;
-    pointer-events: none;
     top: -2.5em;
+    pointer-events: none;
     font-size: 0.9em;
     white-space: nowrap;
     color: #1a3f78;
