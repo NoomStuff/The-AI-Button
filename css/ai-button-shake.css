@@ -2,7 +2,7 @@
     --hexagon: shape(evenodd from 6.47% 67.001%, curve by 0% -34.002% with -1.1735% -7.7% / -1.1735% -26.302%, curve by 7.0415% -12.1965% with 0.7075% -4.641% / 3.3765% -9.2635%, curve by 29.447% -17.001% with 6.0815% -4.8665% / 22.192% -14.1675%, curve by 14.083% 0% with 4.3725% -1.708% / 9.7105% -1.708%, curve by 29.447% 17.001% with 7.255% 2.8335% / 23.3655% 12.1345%, curve by 7.0415% 12.1965% with 3.665% 2.933% / 6.334% 7.5555%, curve by 0% 34.002% with 1.1735% 7.7% / 1.1735% 26.302%, curve by -7.0415% 12.1965% with -0.7075% 4.641% / -3.3765% 9.2635%, curve by -29.447% 17.001% with -6.0815% 4.8665% / -22.192% 14.1675%, curve by -14.083% 0% with -4.3725% 1.708% / -9.7105% 1.708%, curve by -29.447% -17.001% with -7.255% -2.8335% / -23.3655% -12.1345%, curve by -7.0415% -12.1965% with -3.665% -2.933% / -6.334% -7.5555%, close);
 }
 
-.ai-button-wild {
+.ai-button-shake {
     position: relative;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@
     -ms-user-select: none;
 }
 
-.ai-button-wild .aura {
+.ai-button-shake .aura {
     position: absolute;
     inset: 0;
     border-radius: 50%;
@@ -30,13 +30,13 @@
     transition: transform 0.6s cubic-bezier(0.1, 0.75, 0.2, 1), filter 0.3s cubic-bezier(0.1, 0.75, 0.2, 1);
 }
 
-.ai-button-wild:hover .aura {
+.ai-button-shake:hover .aura {
     filter: blur(0px);
     opacity: 1;
     transform: scale(1);
 }
 
-.ai-button-wild .aura::before {
+.ai-button-shake .aura::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -52,7 +52,7 @@
     animation: rotate 2s linear infinite;
 }
 
-.ai-button-wild svg {
+.ai-button-shake svg {
     width: 70%;
     height: 70%;
     z-index: 3;
@@ -61,13 +61,13 @@
     color: rgb(23, 38, 122);
 }
 
-.ai-button-wild:hover svg {
+.ai-button-shake:hover svg {
     color: rgb(252, 255, 243);
     filter: drop-shadow(0 0 10px rgba(255, 221, 79, 0.75)) drop-shadow(0 0 20px rgba(186, 128, 255, 1));
     animation: shake 0.4s cubic-bezier(0.3, 0.1, 0.2, 0.95) infinite;
 }
 
-.ai-button-wild .label {
+.ai-button-shake .label {
     position: absolute;
     z-index: 4;
     pointer-events: none;
@@ -85,7 +85,7 @@
     transition: opacity 0.2s ease, translate 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.ai-button-wild:hover .label {
+.ai-button-shake:hover .label {
     translate: calc(50% + 4em) 0;
     opacity: 1;
 }

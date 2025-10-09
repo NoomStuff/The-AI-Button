@@ -1,0 +1,74 @@
+.normal-button-squish {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: transparent;
+    border: 4px solid #dccdff;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.normal-button-squish:hover {
+    background-color: rgba(248, 241, 255, 0.75);
+    border: 4px solid #c7a0fa;
+}
+
+.normal-button-squish .label {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    bottom: -3.5em;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: #dccdff;
+    background-color: #1b053a;
+    padding: 0.5em 0.8em;
+    border-radius: 0.4em;
+    opacity: 0;
+}
+
+.normal-button-squish .label::before {
+    content: "";
+    position: absolute;
+    background-color: #1b053a;
+    width: 1em;
+    height: 1em;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.normal-button-squish:hover .label {
+    opacity: 1;
+}
+
+.normal-button-squish svg {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    position: relative;
+    fill: #1b053a;
+}
+
+.ai-button-circle .aura::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #9ed2ff 0%, #b69cff 30%, #ff739a 60%, #ffb347 90%);
+    background-size: 100% 200%;
+    clip-path: var(--circle);
+    z-index: 0;
+    filter: blur(12px);
+    transform-origin: center center;
+    will-change: clip-path, background-position, transform;
+    animation: morph 6s ease-in-out infinite, wave 4s linear infinite, rotate 10s linear infinite;
+}

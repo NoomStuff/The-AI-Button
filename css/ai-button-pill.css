@@ -15,6 +15,20 @@
     transition: background 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
+.ai-button-pill::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 32px;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(227, 233, 247, 0.8) 0%, rgba(247, 250, 253, 1) 100%);
+    transition: background 1s cubic-bezier(0.2, 2, 0.5, 0.25), filter 1s cubic-bezier(0.2, 3, 0.5, 0.25);
+}
+
+.ai-button-pill:hover::after {
+    background: linear-gradient(90deg, rgba(227, 233, 247, 0.6) 0%, rgba(247, 250, 253, 0.9) 100%);
+}
+
 .ai-button-pill .aura {
     position: absolute;
     inset: 0px;
@@ -42,20 +56,6 @@
     transform: translate(-50%, -50%);
     transform-origin: center center;
     animation: rotate 5s linear infinite;
-}
-
-.ai-button-pill::after {
-    content: "";
-    position: absolute;
-    inset: 2px;
-    border-radius: 32px;
-    z-index: 0;
-    background: linear-gradient(90deg, rgba(227, 233, 247, 0.8) 0%, rgba(247, 250, 253, 1) 100%);
-    transition: background 1s cubic-bezier(0.2, 2, 0.5, 0.25), filter 1s cubic-bezier(0.2, 3, 0.5, 0.25);
-}
-
-.ai-button-pill:hover::after {
-    background: linear-gradient(90deg, rgba(227, 233, 247, 0.6) 0%, rgba(247, 250, 253, 0.9) 100%);
 }
 
 .ai-button-pill svg {

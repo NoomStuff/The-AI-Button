@@ -167,6 +167,7 @@ p {
     gap: var(--spacing-3);
     width: 100%;
     min-height: 200px;
+    overflow: hidden;
     border-radius: var(--spacing-3);
     background-color: #fefefe;
 }
