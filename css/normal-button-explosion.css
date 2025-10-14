@@ -1,0 +1,21 @@
+.normal-button-explosion {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-size: 1.1em;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.normal-button-explosion:hover{
+    text-decoration: underline;
+}

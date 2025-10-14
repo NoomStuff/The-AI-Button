@@ -20,6 +20,7 @@
     background: #efffef;
     color: #002b32;
     text-decoration: none;
+    filter: drop-shadow(2px 2px 4px rgba(0, 43, 50, 0.1));
 }
 
 .normal-button-text svg {

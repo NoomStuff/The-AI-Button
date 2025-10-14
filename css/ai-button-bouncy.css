@@ -15,7 +15,7 @@
 }
 
 .ai-button-bouncy:hover {
-    animation: grow 2s cubic-bezier(0.2, 1.5, 0.5, 0.25) forwards;
+    animation: grow 1s ease forwards;
 }
 
 .ai-button-bouncy .aura {
@@ -50,7 +50,7 @@
     height: 70%;
     position: relative;
     fill: currentColor;
-    color: #222;
+    color: #441036;
 }
 
 .ai-button-bouncy:hover svg {
@@ -87,7 +87,7 @@
     }
 
     15% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     100% {
